@@ -2,7 +2,6 @@ export * from './introduction/introduction.component';
 export * from './service/service.component';
 export * from './about-me/about-me.component';
 export * from './reach-me/reach-me.component';
-export * from './workshops/workshops.component';
 export * from './skills/skills.component';
 export * from './related-courses/related-courses.component';
 export * from './references/references.component';

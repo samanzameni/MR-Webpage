@@ -18,7 +18,7 @@ const routes: Routes = [
           ),
       },
       {
-        path: 'ٍeducation',
+        path: 'education',
         loadChildren: () =>
           import('src/app/feature/modules/about-me.module').then(
             (module) => module.AboutMeModule
@@ -85,13 +85,6 @@ const routes: Routes = [
         loadChildren: () =>
           import('src/app/feature/modules/skills.module').then(
             (module) => module.SkillsModule
-          ),
-      },
-      {
-        path: 'workshops',
-        loadChildren: () =>
-          import('src/app/feature/modules/workshops.module').then(
-            (module) => module.WorkshopsModule
           ),
       },
     ],

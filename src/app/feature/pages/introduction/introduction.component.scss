@@ -40,4 +40,29 @@
     top: 105%;
     width: 5% ;
   }
+
+  .profile-header {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    margin-bottom: 24px;
   }
+
+  .profile-photo {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: center top;
+    border: 4px solid lightskyblue;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    flex-shrink: 0;
+  }
+
+  @media (max-width: 576px) {
+    .profile-header {
+      flex-direction: column;
+      text-align: center;
+    }
+  }
+}
