@@ -11,7 +11,6 @@ import {
 import { SkillsComponent } from './pages';
 import { ClassroomProjectsComponent } from './pages';
 import { PublicationsComponent } from './pages';
-import { WorkshopsComponent } from './pages';
 import { ConferencesComponent } from './pages';
 import { LanguageProficiencyComponent } from './pages';
 import { ReferencesComponent } from './pages';
@@ -31,7 +30,6 @@ import { ReferencesComponent } from './pages';
     SkillsComponent,
     ClassroomProjectsComponent,
     PublicationsComponent,
-    WorkshopsComponent,
     ConferencesComponent,
     LanguageProficiencyComponent,
     ReferencesComponent
