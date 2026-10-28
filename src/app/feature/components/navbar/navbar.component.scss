@@ -1,11 +1,75 @@
-:host{
-.nav-icon{
+:host {
+  .nav-figure {
+    background-color: #0277bd !important;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  }
+
+  .navbar-brand {
+    color: #fff;
+    font-weight: bold;
+    font-size: 1.1rem;
+  }
+
+  .navbar-toggler {
+    border-color: rgba(255, 255, 255, 0.6);
+    padding: 4px 8px;
+
+    &:focus {
+      box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.5);
+    }
+  }
+
+  .nav-icon {
     justify-content: center;
-}
-.nav-figure{
-    background-color: #00A4FF !important;
-}
-.nav-tab{
-    color: white;
-}
+  }
+
+  .navbar-nav .nav-link.nav-tab {
+    color: #fff;
+    border-radius: 6px;
+    white-space: nowrap;
+
+    &:hover,
+    &:focus {
+      background-color: rgba(255, 255, 255, 0.12);
+    }
+
+    &.active {
+      background-color: rgba(255, 255, 255, 0.22);
+      font-weight: bold;
+    }
+  }
+
+  // Desktop: a single row of tabs.
+  @media (min-width: 1200px) {
+    .navbar-nav .nav-link.nav-tab {
+      padding: 6px 10px;
+      font-size: 14px;
+    }
+  }
+
+  // Mobile & tablet: a scrollable drop-down list.
+  @media (max-width: 1199.98px) {
+    .navbar-collapse {
+      max-height: calc(100vh - 60px);
+      overflow-y: auto;
+    }
+
+    .navbar-nav {
+      padding: 8px 0 4px;
+    }
+
+    .navbar-nav .nav-item + .nav-item {
+      border-top: 1px solid rgba(255, 255, 255, 0.15);
+    }
+
+    .navbar-nav .nav-link.nav-tab {
+      padding: 10px 12px;
+      font-size: 15px;
+
+      i {
+        display: inline-block;
+        width: 24px;
+      }
+    }
+  }
 }
