@@ -1,6 +1,123 @@
-
+/* You can add global styles to this file, and also import other style files */
 
 @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css");
 * {
   font-family: 'IRANSans', serif;
+}
+
+/* ---------- Shared page layout (used by every page) ---------- */
+
+.body {
+  background-color: #f2f2f2 !important;
+  min-height: 85vh;
+  border: 5px solid lightskyblue;
+  border-radius: 24px;
+  margin: 20px;
+  padding: 20px;
+}
+
+.box-css {
+  box-shadow: 10px 10px 5px lightblue;
+  border: 1px solid lightblue;
+  border-radius: 20px;
+  background-color: ghostwhite;
+  padding: 40px;
+  margin: 48px 0;
+  line-height: 1.7;
+  overflow-wrap: break-word;
+
+  h3 {
+    color: #0277bd;
+  }
+
+  > .row > [class*="col-"] {
+    margin-bottom: 10px;
+  }
+
+  .row + .row {
+    margin-top: 4px;
+  }
+
+  .date {
+    color: #555;
+    font-size: 13px;
+    white-space: nowrap;
+  }
+
+  a {
+    word-break: break-word;
+  }
+}
+
+.text-model {
+  text-align: center;
+  line-height: 30px;
+}
+
+/* Tablet */
+@media (max-width: 991.98px) {
+  .body {
+    margin: 12px;
+    padding: 12px;
+  }
+
+  .box-css {
+    padding: 28px 24px;
+    margin: 24px 0;
+  }
+}
+
+/* Phone */
+@media (max-width: 767.98px) {
+  .body {
+    margin: 0;
+    padding: 12px 4px;
+    border: none;
+    border-radius: 0;
+    min-height: calc(100vh - 56px);
+  }
+
+  .box-css {
+    padding: 22px 18px;
+    margin: 8px 0 16px;
+    box-shadow: 4px 4px 4px lightblue;
+    border-radius: 14px;
+    font-size: 15px;
+
+    h3 {
+      font-size: 1.35rem;
+      margin-bottom: 0;
+    }
+
+    h5 {
+      font-size: 1.1rem;
+    }
+
+    h6 {
+      font-size: 0.95rem;
+      line-height: 1.5;
+    }
+
+    .row + .row {
+      margin-top: 12px;
+    }
+
+    .row > .date {
+      margin-bottom: 2px;
+      font-weight: bold;
+      color: #0277bd;
+    }
+
+    ul {
+      padding-left: 18px;
+    }
+
+    // Justified text leaves big gaps on narrow screens.
+    [style*="justify"],
+    .project,
+    .reference,
+    .publication {
+      text-align: left !important;
+    }
+  }
 }
