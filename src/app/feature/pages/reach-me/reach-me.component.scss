@@ -1,2 +1,45 @@
-:host{
+:host {
+  .intro {
+    font-family: var(--serif);
+    font-size: 1.15rem;
+    margin-bottom: 28px;
+  }
+
+  .contact-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    li {
+      display: grid;
+      grid-template-columns: 28px 140px minmax(0, 1fr);
+      align-items: baseline;
+      padding: 14px 0;
+      margin: 0;
+      border-bottom: 1px solid var(--rule);
     }
+
+    i {
+      color: var(--amber-ink);
+    }
+
+    .label {
+      font-weight: 600;
+      color: var(--spruce);
+    }
+
+    a {
+      overflow-wrap: anywhere;
+    }
+  }
+
+  @media (max-width: 575.98px) {
+    .contact-list li {
+      grid-template-columns: 28px minmax(0, 1fr);
+
+      a {
+        grid-column: 2;
+      }
+    }
+  }
+}

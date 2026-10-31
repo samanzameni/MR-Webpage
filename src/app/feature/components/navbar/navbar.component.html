@@ -1,46 +1,38 @@
-<nav class="navbar navbar-expand-xl navbar-dark nav-figure sticky-top">
-  <div class="container-fluid">
-    <a class="navbar-brand d-xl-none" routerLink="/introduction" (click)="closeMenu()">Maryam Ravangard</a>
-    <button class="navbar-toggler" type="button" (click)="toggleMenu()"
-            aria-controls="navbarNavDropdown" [attr.aria-expanded]="menuOpen" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
+<header class="sidebar">
+  <div class="topbar">
+    <a class="brand" routerLink="/introduction" (click)="closeMenu()">Maryam Ravangard</a>
+    <button class="menu-toggle" type="button" (click)="toggleMenu()"
+            aria-controls="site-nav" [attr.aria-expanded]="menuOpen" aria-label="Toggle navigation">
+      <i class="bi" [class.bi-list]="!menuOpen" [class.bi-x-lg]="menuOpen"></i>
     </button>
-    <div class="collapse navbar-collapse nav-icon" [class.show]="menuOpen" id="navbarNavDropdown">
-      <ul class="navbar-nav">
-        <li class="nav-item">
-          <a class="nav-link nav-tab" routerLink="/introduction" routerLinkActive="active" (click)="closeMenu()"><i class="bi bi-info-circle"></i> Introduction</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link nav-tab" routerLink="/education" routerLinkActive="active" (click)="closeMenu()"><i class="bi bi-backpack2"></i> Education</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link nav-tab" routerLink="/publications" routerLinkActive="active" (click)="closeMenu()"><i class="bi bi-journal"></i> Publications</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link nav-tab" routerLink="/classroom-projects" routerLinkActive="active" (click)="closeMenu()"><i class="bi bi-kanban"></i> Research Projects</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link nav-tab" routerLink="/conferences" routerLinkActive="active" (click)="closeMenu()"><i class="bi bi-easel"></i> Conferences</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link nav-tab" routerLink="/practical-experience" routerLinkActive="active" (click)="closeMenu()"><i class="bi bi-person-workspace"></i> Teaching Experience</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link nav-tab" routerLink="/skills" routerLinkActive="active" (click)="closeMenu()"><i class="bi bi-person-gear"></i> Skills &amp; Awards</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link nav-tab" routerLink="/related-courses" routerLinkActive="active" (click)="closeMenu()"><i class="bi bi-book"></i> Related Courses</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link nav-tab" routerLink="/language-proficiency" routerLinkActive="active" (click)="closeMenu()"><i class="bi bi-translate"></i> Language Proficiency</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link nav-tab" routerLink="/references" routerLinkActive="active" (click)="closeMenu()"><i class="bi bi-person-check-fill"></i> References</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link nav-tab" routerLink="/contact-me" routerLinkActive="active" (click)="closeMenu()"><i class="bi bi-telephone"></i> Contact Me</a>
-        </li>
-      </ul>
+  </div>
+
+  <div class="profile">
+    <img src="assets/images/profile.jpg" alt="Portrait of Maryam Ravangard" class="portrait">
+    <a class="name" routerLink="/introduction">Maryam Ravangard</a>
+    <p class="role">M.Sc. Student, Energy and Environment Engineering</p>
+    <p class="affiliation">Sharif University of Technology</p>
+    <div class="links">
+      <a href="mailto:mary.ravangard@gmail.com" title="Email" aria-label="Email"><i class="bi bi-envelope"></i></a>
+      <a href="https://scholar.google.com/citations?user=CILnlrcAAAAJ&amp;hl=en" target="_blank" rel="noopener" title="Google Scholar" aria-label="Google Scholar"><i class="bi bi-mortarboard"></i></a>
+      <a href="https://www.linkedin.com/in/maryam-ravangard" target="_blank" rel="noopener" title="LinkedIn" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+      <a href="https://www.researchgate.net/profile/Maryam-Ravangard" target="_blank" rel="noopener" title="ResearchGate" aria-label="ResearchGate"><i class="bi bi-book"></i></a>
     </div>
   </div>
-</nav>
+
+  <nav id="site-nav" class="site-nav" [class.open]="menuOpen" aria-label="Sections">
+    <ul>
+      <li><a routerLink="/introduction" routerLinkActive="active" (click)="closeMenu()">Introduction</a></li>
+      <li><a routerLink="/education" routerLinkActive="active" (click)="closeMenu()">Education</a></li>
+      <li><a routerLink="/publications" routerLinkActive="active" (click)="closeMenu()">Publications</a></li>
+      <li><a routerLink="/classroom-projects" routerLinkActive="active" (click)="closeMenu()">Research Projects</a></li>
+      <li><a routerLink="/conferences" routerLinkActive="active" (click)="closeMenu()">Conferences</a></li>
+      <li><a routerLink="/practical-experience" routerLinkActive="active" (click)="closeMenu()">Teaching Experience</a></li>
+      <li><a routerLink="/skills" routerLinkActive="active" (click)="closeMenu()">Skills &amp; Awards</a></li>
+      <li><a routerLink="/related-courses" routerLinkActive="active" (click)="closeMenu()">Related Courses</a></li>
+      <li><a routerLink="/language-proficiency" routerLinkActive="active" (click)="closeMenu()">Language Proficiency</a></li>
+      <li><a routerLink="/references" routerLinkActive="active" (click)="closeMenu()">References</a></li>
+      <li><a routerLink="/contact-me" routerLinkActive="active" (click)="closeMenu()">Contact</a></li>
+    </ul>
+  </nav>
+</header>

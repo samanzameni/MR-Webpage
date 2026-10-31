@@ -1,24 +1,23 @@
 :host {
   .scholar-link {
-    margin: 4px 0 20px;
+    margin: -16px 0 28px;
     font-size: 14px;
   }
 
   .section-title {
-    margin: 24px 0 14px;
-    padding-bottom: 6px;
-    border-bottom: 1px solid lightblue;
-    font-size: 1.05rem;
-    color: #333;
+    margin: 36px 0 16px;
+    font-family: var(--sans);
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--muted);
   }
 
   .publication {
     margin-bottom: 18px;
-    padding: 14px 16px;
+    padding: 20px 22px;
     background: #fff;
-    border: 1px solid #e2eef6;
-    border-left: 4px solid lightskyblue;
-    border-radius: 8px;
+    border: 1px solid var(--rule);
+    border-radius: 10px;
   }
 
   .pub-head {
@@ -29,29 +28,37 @@
   }
 
   .pub-num {
-    color: #0277bd;
+    color: var(--amber-ink);
+    font-variant-numeric: tabular-nums;
     font-weight: bold;
   }
 
   .pub-authors {
     font-size: 14px;
-    color: #444;
+    color: var(--muted);
 
     .me {
-      color: #000;
+      color: var(--ink);
+      font-weight: 600;
       text-decoration: underline;
+      text-decoration-color: var(--amber);
+      text-decoration-thickness: 2px;
+      text-underline-offset: 3px;
     }
   }
 
   .pub-title {
-    font-weight: bold;
-    margin: 4px 0;
-    line-height: 1.5;
+    font-family: var(--serif);
+    font-weight: 600;
+    font-size: 1.12rem;
+    color: var(--spruce);
+    margin: 6px 0;
+    line-height: 1.45;
   }
 
   .pub-venue {
     font-size: 14px;
-    color: #444;
+    color: var(--muted);
   }
 
   .pub-links {
@@ -64,8 +71,8 @@
 
     summary {
       cursor: pointer;
-      color: #0277bd;
-      font-weight: bold;
+      color: var(--link);
+      font-weight: 600;
       font-size: 14px;
       width: fit-content;
     }
@@ -74,14 +81,14 @@
       margin: 8px 0 0;
       font-size: 14px;
       line-height: 1.7;
-      text-align: justify;
-      color: #333;
+      text-align: left;
+      color: var(--ink);
     }
   }
 
   @media (max-width: 767.98px) {
     .publication {
-      padding: 12px;
+      padding: 16px;
     }
 
     details p {

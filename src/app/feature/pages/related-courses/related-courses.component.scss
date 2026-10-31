@@ -1,2 +1,11 @@
-:host{
+:host {
+  .box-css > .row > .col-12 {
+    padding: 10px 0;
+    margin: 0;
+    border-bottom: 1px solid var(--rule);
+
+    &:last-child {
+      border-bottom: 0;
+    }
+  }
 }
