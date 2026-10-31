@@ -1,12 +1,30 @@
-:host{
-
+:host {
   .project {
-    margin-bottom: 18px;
-    text-align: justify;
-  }
+    padding: 18px 0;
+    border-bottom: 1px solid var(--rule);
+    margin-bottom: 0 !important;
+    text-align: left;
+    line-height: 1.6;
 
-  .project ul {
-    margin: 4px 0 0;
-    padding-left: 22px;
+    &:first-child {
+      padding-top: 0;
+    }
+
+    &:last-child {
+      border-bottom: 0;
+    }
+
+    > b:first-child {
+      display: block;
+      font-family: var(--serif);
+      font-size: 1.1rem;
+      line-height: 1.4;
+      color: var(--spruce);
+      margin-bottom: 4px;
+    }
+
+    > b:first-child + br {
+      display: none;
+    }
   }
 }

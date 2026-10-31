@@ -1,51 +1,161 @@
 /* You can add global styles to this file, and also import other style files */
 
 @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css");
-* {
-  font-family: 'IRANSans', serif;
+
+/* ---------- Design tokens ---------- */
+:root {
+  --spruce: #1e3b34;          /* sidebar, headings */
+  --spruce-line: #33554c;     /* rules on the sidebar */
+  --on-spruce: #e9f0ec;
+  --on-spruce-muted: #b5c7bf;
+  --paper: #fafbf8;           /* page background */
+  --sage: #e7efea;            /* quiet surfaces */
+  --rule: #d6e0da;            /* hairlines */
+  --ink: #1f2a27;             /* body text */
+  --muted: #5b6964;           /* secondary text */
+  --amber: #d49a2a;           /* single accent (on dark) */
+  --amber-ink: #8a5d0c;       /* accent for text on light */
+  --link: #1f6b58;
+
+  --serif: 'Literata', Georgia, 'Times New Roman', serif;
+  --sans: 'Public Sans', 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
 }
 
-/* ---------- Shared page layout (used by every page) ---------- */
+html,
+body {
+  background: var(--paper);
+}
+
+body {
+  font-family: var(--sans);
+  color: var(--ink);
+  font-size: 16px;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: var(--link);
+  text-underline-offset: 3px;
+
+  &:hover {
+    color: var(--spruce);
+  }
+
+  &:focus-visible {
+    outline: 2px solid var(--amber);
+    outline-offset: 2px;
+    border-radius: 2px;
+  }
+}
+
+::selection {
+  background: #f3dfb4;
+}
+
+/* ---------- Shared page layout (every page uses .body > .container > .row > .box-css) ---------- */
 
 .body {
-  background-color: #f2f2f2 !important;
-  min-height: 85vh;
-  border: 5px solid lightskyblue;
-  border-radius: 24px;
-  margin: 20px;
-  padding: 20px;
+  padding: 56px 64px 80px;
+  min-height: 100vh;
+
+  > .container {
+    max-width: 780px;
+    margin: 0;
+    padding: 0;
+  }
+
+  > .container > .row {
+    margin: 0;
+  }
+
+  .box-css {
+    flex: 0 0 100%;
+    max-width: 100%;
+    padding: 0;
+    margin: 0;
+    background: none;
+    overflow-wrap: break-word;
+  }
 }
 
 .box-css {
-  box-shadow: 10px 10px 5px lightblue;
-  border: 1px solid lightblue;
-  border-radius: 20px;
-  background-color: ghostwhite;
-  padding: 40px;
-  margin: 48px 0;
-  line-height: 1.7;
-  overflow-wrap: break-word;
+  /* Page title */
+  > h3:first-of-type {
+    font-family: var(--serif);
+    font-weight: 600;
+    font-size: 2.25rem;
+    line-height: 1.2;
+    color: var(--spruce);
+    margin: 0 0 32px;
+    padding-bottom: 18px;
+    border-bottom: 1px solid var(--rule);
+  }
 
-  h3 {
-    color: #0277bd;
+  /* Secondary headings inside a page (e.g. Research Areas, Awards) */
+  > h3:not(:first-of-type) {
+    font-family: var(--serif);
+    font-weight: 600;
+    font-size: 1.4rem;
+    color: var(--spruce);
+    margin: 44px 0 16px;
+  }
+
+  h5,
+  h6 {
+    font-family: var(--serif);
+  }
+
+  /* Templates put a <br> after every heading; spacing is handled above. */
+  > h3 + br {
+    display: none;
+  }
+
+  b,
+  strong {
+    font-weight: 600;
+  }
+
+  > .row {
+    margin-left: 0;
+    margin-right: 0;
   }
 
   > .row > [class*="col-"] {
-    margin-bottom: 10px;
+    padding-left: 0;
+    margin-bottom: 8px;
   }
 
-  .row + .row {
-    margin-top: 4px;
+  > .row + .row {
+    margin-top: 0;
+    padding-top: 18px;
+    border-top: 1px solid var(--rule);
+  }
+
+  > .row:not(:last-child) {
+    padding-bottom: 10px;
   }
 
   .date {
-    color: #555;
-    font-size: 13px;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--amber-ink);
+    font-variant-numeric: tabular-nums;
     white-space: nowrap;
+    padding-top: 2px;
   }
 
-  a {
-    word-break: break-word;
+  ul {
+    padding-left: 20px;
+    margin: 6px 0 0;
+
+    li {
+      margin-bottom: 4px;
+    }
+
+    li::marker {
+      color: var(--amber);
+    }
   }
 }
 
@@ -54,62 +164,52 @@
   line-height: 30px;
 }
 
-/* Tablet */
-@media (max-width: 991.98px) {
-  .body {
-    margin: 12px;
-    padding: 12px;
-  }
+/* Bootstrap badges in the site palette */
+.badge.bg-success {
+  background-color: var(--spruce) !important;
+}
 
-  .box-css {
-    padding: 28px 24px;
-    margin: 24px 0;
+.badge.bg-secondary {
+  background-color: var(--sage) !important;
+  color: var(--spruce);
+}
+
+/* ---------- Tablet ---------- */
+@media (max-width: 1199.98px) {
+  .body {
+    padding: 40px 40px 64px;
+    min-height: calc(100vh - 60px);
+
+    > .container {
+      margin: 0 auto;
+    }
   }
 }
 
-/* Phone */
+/* ---------- Phone ---------- */
 @media (max-width: 767.98px) {
+  body {
+    font-size: 15.5px;
+  }
+
   .body {
-    margin: 0;
-    padding: 12px 4px;
-    border: none;
-    border-radius: 0;
-    min-height: calc(100vh - 56px);
+    padding: 28px 20px 56px;
   }
 
   .box-css {
-    padding: 22px 18px;
-    margin: 8px 0 16px;
-    box-shadow: 4px 4px 4px lightblue;
-    border-radius: 14px;
-    font-size: 15px;
-
-    h3 {
-      font-size: 1.35rem;
-      margin-bottom: 0;
+    > h3:first-of-type {
+      font-size: 1.75rem;
+      margin-bottom: 24px;
+      padding-bottom: 14px;
     }
 
-    h5 {
-      font-size: 1.1rem;
-    }
-
-    h6 {
-      font-size: 0.95rem;
-      line-height: 1.5;
-    }
-
-    .row + .row {
-      margin-top: 12px;
+    > h3:not(:first-of-type) {
+      font-size: 1.25rem;
+      margin-top: 36px;
     }
 
     .row > .date {
-      margin-bottom: 2px;
-      font-weight: bold;
-      color: #0277bd;
-    }
-
-    ul {
-      padding-left: 18px;
+      margin-bottom: 0;
     }
 
     // Justified text leaves big gaps on narrow screens.
@@ -119,5 +219,12 @@
     .publication {
       text-align: left !important;
     }
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    scroll-behavior: auto !important;
+    transition: none !important;
   }
 }
