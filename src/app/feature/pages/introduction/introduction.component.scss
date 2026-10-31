@@ -7,12 +7,12 @@
   }
 
   .profile-photo {
-    width: 112px;
-    height: 112px;
-    border-radius: 50%;
+    width: 128px;
+    height: auto;
+    aspect-ratio: 4 / 5;
     object-fit: cover;
-    object-position: center top;
-    border: 3px solid var(--sage);
+    border-radius: 12px;
+    box-shadow: 0 6px 16px rgba(30, 59, 52, 0.18);
     flex-shrink: 0;
   }
 
@@ -102,8 +102,7 @@
     }
 
     .profile-photo {
-      width: 88px;
-      height: 88px;
+      width: 104px;
     }
 
     .profile-name {
