@@ -113,7 +113,8 @@
 
     .portrait {
       display: block;
-      width: 168px;
+      width: 100%;
+      max-width: 264px;
       height: auto;
       aspect-ratio: 4 / 5;
       object-fit: cover;
@@ -181,12 +182,13 @@
     }
   }
 
-  /* Laptops with short screens: smaller portrait so the whole menu stays visible */
-  @media (min-width: 1200px) and (max-height: 860px) {
-    .portrait {
-      width: 120px;
-      margin-bottom: 14px;
-    }
+  /* Shorter screens: scale the portrait down so the whole menu stays visible */
+  @media (min-width: 1200px) and (max-height: 1020px) {
+    .portrait { width: 196px; }
+  }
+
+  @media (min-width: 1200px) and (max-height: 880px) {
+    .portrait { width: 164px; margin-bottom: 14px; }
 
     .name {
       font-size: 1.5rem;
@@ -199,13 +201,19 @@
     }
   }
 
-  @media (min-width: 1200px) and (max-height: 760px) {
-    .portrait {
-      width: 96px;
-    }
+  @media (min-width: 1200px) and (max-height: 810px) {
+    .portrait { width: 148px; }
+  }
+
+  @media (min-width: 1200px) and (max-height: 780px) {
+    .portrait { width: 136px; }
 
     .links {
       margin-top: 8px;
     }
+  }
+
+  @media (min-width: 1200px) and (max-height: 730px) {
+    .portrait { width: 104px; }
   }
 }
